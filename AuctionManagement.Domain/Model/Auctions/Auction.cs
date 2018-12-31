@@ -18,12 +18,6 @@ namespace AuctionManagement.Domain.Model.Auctions
         {
             if (endDateTime <= DateTime.Now) throw new Exception();
 
-            //this.Id = Guid.NewGuid();
-            //this.StartingPrice = startingPrice;
-            //this.SellerId = sellerId;
-            //this.EndDateTime = endDateTime;
-            //this.ProductDescription = productDescription;
-
             Causes(new AuctionOpened(Guid.NewGuid(), startingPrice, sellerId, endDateTime, productDescription));
         }
         public void PlaceBid(Bid bid)
